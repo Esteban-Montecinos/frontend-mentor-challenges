@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 //icons de react-icons
-import { IoClose } from "react-icons/io5";
+import { ImCross } from "react-icons/im";
 import { FaHeart, FaListUl } from "react-icons/fa6";
 import { GrPowerReset } from "react-icons/gr";
 
@@ -102,7 +102,7 @@ export default function HomePageClient({ challenges: initialState }) {
           onClick={handleDislike}
           type="button"
         >
-          <IoClose size={35} />
+          <ImCross size={35} />
         </button>
         <button
           className="bg-zinc-700 drop-shadow-md text-emerald-500 p-4 rounded-full hover:scale-110 transition duration-300 ease-in-out "
