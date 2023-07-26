@@ -87,7 +87,7 @@ export default function HomePageClient({ challenges: initialState }) {
           </div>
         </div>
       </div>
-      <hr />
+      <hr className="opacity-40"/>
       <div className="flex gap-4 mt-2 p-4 items-center justify-center">
         <div className="group flex relative">
           <button
