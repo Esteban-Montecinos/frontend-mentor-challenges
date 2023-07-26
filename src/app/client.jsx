@@ -63,7 +63,7 @@ export default function HomePageClient({ challenges: initialState }) {
             ))
           ) : (
             <div className="max-w-lg p-6 text-center rounded-lg shadow bg-zinc-800 border-zinc-700">
-              <p>Cuando des Like a un Challenge, podrás verlo aqui 💪.</p>
+              <p>Cuando des Like a un Challenge, podrás verlo aquí 💪.</p>
             </div>
           )}
         </div>
