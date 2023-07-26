@@ -4,7 +4,7 @@ import { useState } from "react";
 //icons de react-icons
 import { ImCross } from "react-icons/im";
 import { FaHeart } from "react-icons/fa6";
-import { GrPowerReset,GrList } from "react-icons/gr";
+import { MdOutlineRestartAlt, MdFormatListBulleted } from "react-icons/md";
 
 export default function HomePageClient({ challenges: initialState }) {
   const [challenges, setChallenges] = useState(initialState);
@@ -51,19 +51,18 @@ export default function HomePageClient({ challenges: initialState }) {
                 <p className="mb-3 font-normal text-gray-400 line-clamp-3">
                   {_challenge.description}
                 </p>
-                <a               
+                <a
                   href={`https://www.frontendmentor.io/challenges/${_challenge.slug}`}
                   className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg  focus:ring-4 focus:outline-none bg-emerald-600 hover:bg-emerald-700 focus:ring-emerald-800 transition-colors"
-                  target="_blank" rel="noopener noreferrer"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   Ver challenge →
                 </a>
               </div>
             ))
           ) : (
-            <div
-              className="max-w-lg p-6 text-center rounded-lg shadow bg-zinc-800 border-zinc-700"
-            >
+            <div className="max-w-lg p-6 text-center rounded-lg shadow bg-zinc-800 border-zinc-700">
               <p>Cuando des Like a un Challenge, podrás verlo aqui 💪.</p>
             </div>
           )}
@@ -89,35 +88,70 @@ export default function HomePageClient({ challenges: initialState }) {
         </div>
       </div>
       <hr />
-      <div className="flex gap-4 mt-2 items-center justify-center">
+      <div className="flex gap-4 mt-2 p-4 items-center justify-center">
+        <div className="group flex relative">
+          <button
+            data-tooltip-target="tooltip-animation"
+            className="bg-zinc-700 drop-shadow-lg text-amber-500 p-2 rounded-full hover:scale-110 transition duration-300 ease-in-out"
+            onClick={handleReset}
+            type="button"
+          >
+            <MdOutlineRestartAlt size={35} />
+          </button>
+          <span
+            className="group-hover:opacity-100 transition-opacity bg-zinc-700 px-1 text-sm text-zinc-100 rounded-md absolute left-1/2 
+            -translate-x-1/2 translate-y-12 opacity-0 m-4 mx-auto"
+          >
+            Reiniciar
+          </span>
+        </div>
+        <div className="group flex relative">
         <button
-          className="bg-zinc-700 drop-shadow-md p-4 rounded-full hover:scale-110 transition duration-300 ease-in-out"
-          onClick={handleReset}
-          type="button"
-        >
-          <GrPowerReset size={30} />
-        </button>
-        <button
-          className="bg-zinc-700 drop-shadow-md text-pink-500 p-4 rounded-full hover:scale-110 transition duration-300 ease-in-out"
+          className="bg-zinc-700 drop-shadow-lg text-pink-500 p-4 rounded-full hover:scale-110 transition duration-300 ease-in-out"
           onClick={handleDislike}
           type="button"
         >
           <ImCross size={35} />
         </button>
+          <span
+            className="group-hover:opacity-100 transition-opacity bg-zinc-700 px-1 text-sm text-zinc-100 rounded-md absolute left-1/2 
+            -translate-x-1/2 translate-y-14 opacity-0 m-4 mx-auto"
+          >
+            Nope
+          </span>
+        </div>
+        <div className="group flex relative">
         <button
-          className="bg-zinc-700 drop-shadow-md text-emerald-500 p-4 rounded-full hover:scale-110 transition duration-300 ease-in-out "
+          className="bg-zinc-700 drop-shadow-lg text-emerald-500 p-4 rounded-full hover:scale-110 transition duration-300 ease-in-out "
           onClick={handleLike}
           type="button"
         >
           <FaHeart size={35} />
         </button>
+          <span
+            className="group-hover:opacity-100 transition-opacity bg-zinc-700 px-1 text-sm text-zinc-100 rounded-md absolute left-1/2 
+            -translate-x-1/2 translate-y-14 opacity-0 m-4 mx-auto"
+          >
+            Like
+          </span>
+        </div><div className="group flex relative">
         <button
-          className="bg-zinc-700 drop-shadow-md p-4 rounded-full hover:scale-110 transition duration-300 ease-in-out"
+          className="bg-zinc-700 drop-shadow-lg text-amber-500 p-2 rounded-full hover:scale-110 transition duration-300 ease-in-out"
           onClick={handleOpenLiked}
           type="button"
         >
-          <GrList size={30} />
+          <MdFormatListBulleted size={35} />
         </button>
+          <span
+            className="group-hover:opacity-100 transition-opacity bg-zinc-700 px-1 text-sm text-zinc-100 rounded-md absolute left-1/2 
+            -translate-x-1/2 translate-y-12 opacity-0 m-4 mx-auto"
+          >
+            Lista
+          </span>
+        </div>
+        
+        
+        
       </div>
     </div>
   );
