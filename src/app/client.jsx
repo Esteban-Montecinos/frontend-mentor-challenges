@@ -3,8 +3,8 @@
 import { useState } from "react";
 //icons de react-icons
 import { ImCross } from "react-icons/im";
-import { FaHeart, FaListUl } from "react-icons/fa6";
-import { GrPowerReset } from "react-icons/gr";
+import { FaHeart } from "react-icons/fa6";
+import { GrPowerReset,GrList } from "react-icons/gr";
 
 export default function HomePageClient({ challenges: initialState }) {
   const [challenges, setChallenges] = useState(initialState);
@@ -116,7 +116,7 @@ export default function HomePageClient({ challenges: initialState }) {
           onClick={handleOpenLiked}
           type="button"
         >
-          <FaListUl size={30} />
+          <GrList size={30} />
         </button>
       </div>
     </div>
