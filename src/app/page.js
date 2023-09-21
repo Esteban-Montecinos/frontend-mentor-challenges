@@ -1,6 +1,15 @@
-import { getChallenges } from "@/service/api";
+import { load } from "cheerio";
 import HomePageClient from "./client";
 
+async function getChallenges() {
+  const html = await fetch("https://www.frontendmentor.io/challenges").then(
+    (res) => res.text()
+  );
+  const $ = load(html);
+  const nextData = JSON.parse($("#__NEXT_DATA__").html());
+
+  return Object.values(nextData.props.initialState["v2/challenges"].entities);
+}
 export default async function Home() {
   const challenges = await getChallenges();
   return (
