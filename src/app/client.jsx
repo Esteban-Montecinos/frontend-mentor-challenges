@@ -71,7 +71,10 @@ export default function HomePageClient({ challenges: initialState }) {
               <img
                 src={challenge.heroImage}
                 alt={challenge.title}
-                className="object-cover w-full rounded-t-3xl h-80"
+                className="object-cover rounded-t-3xl"
+                height="320px"
+                width={480}
+                sizes="50vw"
               />
               <div className="flex flex-col gap-2 p-4">
                 <h2 className="text-xl font-medium line-clamp-1">
