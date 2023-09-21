@@ -69,6 +69,7 @@ export default function HomePageClient({ challenges: initialState }) {
           <div className="rounded-t-3xl">
             <div className="flex flex-col gap-2">
               <img
+                loading="lazy"
                 src={challenge.heroImage}
                 alt={challenge.title}
                 className="object-cover w-full rounded-t-3xl h-80"
